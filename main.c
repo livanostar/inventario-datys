@@ -1,6 +1,7 @@
+#include "interfaz/interfaz.h"
 #include <stdio.h>
 
 int main(void) {
-  printf("Hola mundo\n");
+  menuDeDatys();
   return 0;
 }

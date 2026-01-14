@@ -1,6 +1,6 @@
 struct medioBasico {
   char codigo[10];
-  char tipo[10];
+  char tipo[20];
   char estado;
   int mes;
 };
