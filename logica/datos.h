@@ -11,3 +11,8 @@ struct departamento {
   int cantidadDeTrabajadores;
   struct medioBasico mediosDelDepartamento[50];
 };
+
+struct totalPorTipo {
+  char tipo[20];
+  int total;
+};

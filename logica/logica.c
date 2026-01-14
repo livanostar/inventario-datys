@@ -1,5 +1,7 @@
 #include "datos.h"
+#include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 
 struct departamento departamentosEjemplos[5] = {
     {"DEP01",
@@ -33,4 +35,31 @@ void inicializarDeptos(struct departamento departamentos[100],
     count++;
   }
   *tamanoLogico = count;
+}
+
+void devolverTotaldeMediosPorTipo(struct departamento departamentos[100],
+                                  int tamanoLogico,
+                                  struct totalPorTipo mediosPorTipo[100],
+                                  int *tamanoDeMediosPorTipo) {
+  int i;
+
+  for (i = 0; i < tamanoLogico; i++) {
+    for (int j = 0; j < 50; j++) {                       // recorriando deptos
+      for (int k = 0; k < *tamanoDeMediosPorTipo; k++) { // recorriendo medios
+
+        bool encontrado = false;
+        if (strcmp(mediosPorTipo[k].tipo,
+                   departamentos[i].mediosDelDepartamento[j].tipo) == 0) {
+          encontrado = true;
+        }
+
+        if (encontrado) {
+          mediosPorTipo[k].total++;
+        } else {
+          strcpy(mediosPorTipo[k].tipo,
+                 departamentos[i].mediosDelDepartamento[j].tipo);
+        }
+      }
+    }
+  }
 }

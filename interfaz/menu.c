@@ -10,11 +10,15 @@ void menuDeDatys() {
   bool salir = false;
   struct departamento departamentos[100];
   int tamanoLogico;
+  char idDelDepto[10];
+  struct totalPorTipo mediosPorTipo[100];
+  int tamanoDeMediosPorTipo;
 
   while (!salir) {
     printf("\nBienvenido al Inventario de Datys\n");
     printf("1. Mostrar departamentos\n");
     printf("2. Rellenar automáticamente\n");
+    printf("3. Total de medios de un departamento por tipos\n");
 
     do {
       if (scanf("%d", &opcion) != 1) {
@@ -31,6 +35,10 @@ void menuDeDatys() {
       inicializarDeptos(departamentos, &tamanoLogico);
       printf("Se han rellenado los departamentos\n");
       break;
+    case 3:
+      idDelDepto = pedirId();
+      totaldeMediosPorTipo(departamentos, tamanoLogico, mediosPorTipo,
+                           &tamanoDeMediosPorTipo);
     }
     system("pause");
     system("cls");
