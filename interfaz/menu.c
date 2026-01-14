@@ -1,6 +1,7 @@
 #include "interfaz.h"
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void menuDeDatys() {
 
@@ -31,5 +32,7 @@ void menuDeDatys() {
       printf("Se han rellenado los departamentos\n");
       break;
     }
+    system("pause");
+    system("cls");
   }
 }
